@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+	<title>Shuffle and Sort</title>
+	<meta charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		function sortList() {
+
+		  var cardNumbers = [];
+
+		  $('#shuffleAndSort').find('li').each(function (j, li) {
+			cardNumbers.push($(this).text());
+		  });
+
+		  cardNumbers.sort();
+
+		  i = 0;
+
+		  $('#shuffleAndSort').find('li').each(function () {
+			this.innerHTML = cardNumbers[i];
+			i++;
+		  });
+
+		}
+
+
+		function shuffle(array) {
+		  array.sort(() => Math.random() - 0.5);
+		}
+
+
+		function ranndomList() {
+		  var cardNumbers = [];
+		  $('#shuffleAndSort').find('li').each(function (j, li) {
+			cardNumbers.push($(this).text());
+
+		  });
+		
+		shuffle(cardNumbers);
+		i = 0;
+
+		$('#shuffleAndSort').find('li').each(function () {
+			this.innerHTML = cardNumbers[i];
+			i++;
+		  });
+
+		}	
+	</script>
+
+</head>
+<body>
+ <div class="wrapper">
+ 	<header>
+		<h1>Shuffel and Sort</h1>
+		<div class="line"></div>
+	</header>
+
+	<aside>
+	<button id="shuffle" type="button" onclick="ranndomList()" class="btn blue active">Shuffle</button>
+	<button type="button" onclick="sortList()" class="btn blue" >Sort</button>
+		 
+	</aside> 
+
+    <section> 
+		<article>
+			 <ul id="shuffleAndSort">
+			 	<li class="li-1">1</li>
+			 	<li class="li-2">2</li>
+			 	<li class="li-3">3</li>
+			 	<li class="li-4">4</li>
+			 	<li class="li-5">5</li>
+			 	<li class="li-6">6</li>
+			 	<li class="li-7">7</li>
+			 	<li class="li-8">8</li>
+			 	<li class="li-9">9</li>
+			 </ul>  
+		</article> 
+	</section> 
+
+	<footer>
+
+	</footer>
+  </div> 
+</body>
+</html>
